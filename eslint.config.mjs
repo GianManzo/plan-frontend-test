@@ -1,4 +1,4 @@
-import { defineConfig, globalIgnores } from 'eslint/config'
+import { defineConfig } from 'eslint/config'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import react from 'eslint-plugin-react'
 import importHelpers from 'eslint-plugin-import-helpers'
@@ -17,16 +17,17 @@ const compat = new FlatCompat({
 })
 
 export default defineConfig([
-  {
-    extends: compat.extends(
-      'next/core-web-vitals',
-      'plugin:react/recommended',
-      'plugin:@typescript-eslint/eslint-recommended',
-      'plugin:@typescript-eslint/recommended',
-      'prettier',
-      'eslint:recommended',
-    ),
+  // Spread the legacy configs from compat
+  ...compat.extends(
+    'next/core-web-vitals',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
+  ),
 
+  // Custom config object
+  {
     plugins: {
       '@typescript-eslint': typescriptEslint,
       react,
@@ -92,12 +93,16 @@ export default defineConfig([
       ],
     },
   },
-  globalIgnores([
-    'node_modules',
-    '.next/',
-    'public/',
-    '.vscode/',
-    '.prettierrc.js',
-    'eslint.config.mjs',
-  ]),
+
+  // Ignores
+  {
+    ignores: [
+      'node_modules/',
+      '.next/',
+      'public/',
+      '.vscode/',
+      '.prettierrc.js',
+      'eslint.config.mjs',
+    ],
+  }
 ])
