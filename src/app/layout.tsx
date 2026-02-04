@@ -3,8 +3,8 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 
-import Providers from '@/shared/components/Providers'
 import Footer from '@/shared/components/Footer'
+import Providers from '@/shared/components/Providers'
 
 import './globals.css'
 
