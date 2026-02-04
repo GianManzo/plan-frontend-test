@@ -63,4 +63,8 @@ Para rodar o projeto localmente, siga os passos abaixo:
 
 ---
 
+https://github.com/user-attachments/assets/ecceebe5-d9d5-4a5a-b9e4-c77da94efe08
+
+
+
 Desenvolvido por Gian Manzo.
