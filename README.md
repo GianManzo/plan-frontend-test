@@ -2,7 +2,11 @@
 
 Aplicação desenvolvida como teste técnico para a vaga de Desenvolvedor Senior React (Next.js). A aplicação consome a REST Countries API para listar e exibir detalhes de países, seguindo rigorosamente o layout e requisitos técnicos propostos.
 
-## 🚀 Tecnologias e Ferramentas
+## � Deploy
+
+Acesse o projeto online: https://plan-frontend-gian-manzo.vercel.app/
+
+## �🚀 Tecnologias e Ferramentas
 
 - **Next.js 15 (App Router)**: Framework React para renderização híbrida e rotas.
 - **TypeScript**: Tipagem estática para maior segurança e manutenibilidade.
