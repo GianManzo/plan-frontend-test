@@ -62,6 +62,9 @@ export default defineConfig([
       '@typescript-eslint/no-explicit-any': 'off',
       'react/display-name': 'off',
       'react/prop-types': 'off',
+      'react/react-in-jsx-scope': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'no-unused-vars': 'off',
 
       'import-helpers/order-imports': [
         'error',

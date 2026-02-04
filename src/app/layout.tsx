@@ -1,19 +1,21 @@
 import React from 'react'
-import { ToastContainer } from 'react-toastify'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Nunito } from 'next/font/google'
 
-import { Providers } from '@/components/Providers'
+import Providers from '@/shared/components/Providers'
+import Footer from '@/shared/components/Footer'
 
-import '@/styles/globals.scss'
-import 'react-toastify/dist/ReactToastify.css'
+import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const nunito = Nunito({
+  subsets: ['latin'],
+  variable: '--font-nunito',
+})
 
 export const metadata: Metadata = {
-  title: 'Plan',
-  description: 'Template for a Next.js app with TypeScript and Sass',
+  title: 'Plan Countries',
+  description: 'Explore countries of the world',
 }
 
 export default function RootLayout({
@@ -22,10 +24,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Providers>{children}</Providers>
-        <ToastContainer />
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body className={nunito.className}>
+        <Providers>
+          <div className="flex flex-col min-h-screen">
+            {children}
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   )

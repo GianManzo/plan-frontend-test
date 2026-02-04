@@ -1,136 +1,66 @@
-# ⭐ Desafio Técnico – Desenvolvedor(a) Front-End (Next.js)
+# Country Explorer - Plan Frontend Test
 
-​
+Aplicação desenvolvida como teste técnico para a vaga de Desenvolvedor Senior React (Next.js). A aplicação consome a REST Countries API para listar e exibir detalhes de países, seguindo rigorosamente o layout e requisitos técnicos propostos.
 
-## ⭐ Objetivo
+## 🚀 Tecnologias e Ferramentas
 
-​
-Desenvolver uma aplicação web com **Next.js** que consuma a [REST Countries API](https://restcountries.com/#rest-countries), permitindo ao usuário explorar e visualizar informações sobre países de forma interativa e responsiva.
-​
+- **Next.js 15 (App Router)**: Framework React para renderização híbrida e rotas.
+- **TypeScript**: Tipagem estática para maior segurança e manutenibilidade.
+- **Tailwind CSS**: Estilização utility-first, garantindo responsividade e fidelidade ao layout.
+- **TanStack Query (React Query)**: Gerenciamento de estado servidor (caching, loading, error states).
+- **Zustand**: Gerenciamento de estado global leve para filtros (busca, religião, idioma).
+- **Axios**: Cliente HTTP para requisições à API.
+- **Lucide React**: Ícones leves e consistentes.
+- **ESLint & Prettier**: Padronização de código e formatação.
 
----
+## 📦 Instalação e Execução
 
-​
+Para rodar o projeto localmente, siga os passos abaixo:
 
-## ⭐ Contexto
+1. **Clone o repositório:**
 
-​
-A aplicação será um catálogo de países com recursos de filtragem e visualização de detalhes. O usuário deve poder:
-​
+   ```bash
+   git clone <URL_DO_REPOSITORIO>
+   cd plan-frontend-test
+   ```
 
-- Navegar por uma lista de países.
-- Filtrar por:
-  - Nome do país (busca textual).
-  - Continente (checkboxes).
-  - Idioma (select).
-- Acessar uma página com detalhes do país selecionado.
-  ​
+2. **Instale as dependências:**
 
----
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-​
+3. **Inicie o servidor de desenvolvimento:**
 
-## ⭐ Layout
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
 
-Segue links do layout para aplicação:
-  - [Figma Componentes](https://www.figma.com/design/uqRKSNiAtLlHWzg6qs7J0v/TESTE-FRONT-PLAN?node-id=0-1&p=f)
-  - [Figma Apresentação](https://www.figma.com/proto/uqRKSNiAtLlHWzg6qs7J0v/TESTE-FRONT-PLAN?node-id=2-615&t=jAEkXLJ8nXUMIDD4-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1)
+4. **Acesse a aplicação:**
+   Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-**A responsividade deve ser aplicada para manter o layout mais coerente com o definido acima.**
+## 🛠️ Escolhas Técnicas
 
----
+- **Next.js App Router**: Escolhido por ser o padrão moderno do Next.js, oferecendo melhor performance e organização de rotas.
+- **Arquitetura (`src/shared` e `src/screens`)**: Optei por separar funcionalidades globais (shared) de telas específicas (screens) para manter a base de código escalável e organizada.
+- **Tailwind CSS vs Sass**: Sass foi removido. Tailwind permite desenvolvimento mais ágil e bundle size otimizado (purging de CSS não utilizado).
+- **React Query**: Essencial para lidar com dados assíncronos da API de Países, oferecendo cache automático e evitando prop drilling de estados de loading/erro.
+- **Zustand**: Escolhido para o estado global dos filtros por ser mais simples e menos verboso que Redux ou Context API para este caso de uso.
+- **100% Responsivo**: O layout se adapta de mobile a desktop utilizando breakpoints do Tailwind (`md`, `lg`).
 
-​
+## ✅ Funcionalidades Implementadas
 
-## ⭐ Requisitos Técnicos
-
-​
-
-- Utilizar **Next.js** como framework principal ([https://nextjs.org/](https://nextjs.org/)).
-- Utilizar **ESLint**, conforme [documentação oficial](https://nextjs.org/docs/app/api-reference/config/eslint).
-- Utilizar **TypeScript**
-- Garantir **responsividade** da aplicação.
-- Exibir as informações dos países **em português**, quando disponível, utilizando o campo `translations.por` da versão `v3.1` da REST Countries API.
-- Código organizado, componentizado e limpo.
-  ​
-
----
-
-​
-
-## ⭐ Funcionalidades Esperadas
-
-​
-
-### 1. Página Inicial
-
-- Lista de países com:
-  - Nome (em português)
-  - Bandeira
-  - Região
-- Filtros:
-  - **Busca por nome**
-  - **Filtro por continente** (checkbox)
-  - **Filtro por idioma** (select)
-    ​
-
-### 2. Página de Detalhes
-
-- Informações completas de um país:
-  - Nome oficial
-  - População
-  - Moeda
-  - Línguas faladas
-  - Bandeira
-  - Região / Sub-região
-    ​
+- Listagem de países com paginação.
+- Busca por nome (em português ou inglês).
+- Filtro por Continente (Múltipla escolha/Checkbox).
+- Filtro por Idioma (Dinâmico baseados nos países carregados).
+- Página de Detalhes com informações completas.
+- Navegação fluida e animações de loading.
 
 ---
 
-​
-
-## ⭐ Diferenciais (Desejável, não obrigatório)
-
-​
-
-- Estilização moderna: **TailwindCSS**, **CSS Modules**
-- Configuração de **Prettier** e **ESLint**
-- Considerações básicas de acessibilidade
-  ​
-
----
-
-## ⭐ Considerações sobre o repositório
-
-​
-
-Este projeto deve ser utilizado como base para o desenvolvimento do seu teste. Alguns componentes estão presentes apenas como exemplo para o desenvolvedor, e devem ser removidos antes do início efetivo do desenvolvimento do teste.
-
-​
-
-## ⭐ Entrega
-
-​
-
-1. Faça um fork do repositório público <link do repositorio>.
-2. Inclua no `README.md` as seguintes informações:
-   - Instruções para rodar localmente.
-   - Breve explicação sobre suas escolhas técnicas.
-   - Link do deploy (se houver).
-3. Submeta o link do repositório e, se aplicável, do deploy.
-   ​
-   Boa sorte! Estamos ansiosos para ver sua solução. 🚀
-
-​
-
-## ⭐ Instruções
-
-​
-
-## ⭐ Breve explicação
-
-​
-
-## ⭐ Link do deploy (se houver)
-
-​
+Desenvolvido por Gian Manzo.
